@@ -12,6 +12,7 @@ const FriendRequestList = ({ requests }: { requests: RequestWithUser[] }) => {
   const [requestState, setRequestState] = useState(requests);
 
   const accept = async (requestId: number, userId: string) => {
+    console.log("accept", requestId, userId);
     removeOptimisticRequest(requestId);
     try {
       await acceptFollowRequest(userId);
@@ -39,7 +40,7 @@ const FriendRequestList = ({ requests }: { requests: RequestWithUser[] }) => {
 
   return (
     <div className="">
-      {requests.map((request) => (
+      {optimisticRequests.map((request) => (
         <div className="flex items-center justify-between" key={request.id}>
           <div className="flex items-center gap-4">
             <Image

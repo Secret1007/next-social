@@ -80,17 +80,17 @@ const ProfilePage = async ({ params }: { params: { username: string } }) => {
                 <span className="text-sm">Posts</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-medium">{user._count.followers}K</span>
+                <span className="font-medium">{user._count.followers}</span>
                 <span className="text-sm">Followers</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-medium">{user._count.followings}K</span>
+                <span className="font-medium">{user._count.followings}</span>
                 <span className="text-sm">Following</span>
               </div>
             </div>
           </div>
 
-          <Feed />
+          <Feed username={username} />
         </div>
       </div>
       <div className="hidden lg:block w-[30%]">
